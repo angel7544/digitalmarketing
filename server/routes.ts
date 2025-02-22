@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertUserSchema, insertTipSchema } from "@shared/schema";
+import { insertUserSchema, insertTipSchema, insertContactSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/modules", async (req, res) => {
@@ -31,6 +31,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       req.body.progress
     );
     res.json(user);
+  });
+
+  // Contact form submission endpoint
+  app.post("/api/contact", async (req, res) => {
+    const messageData = insertContactSchema.parse({
+      ...req.body,
+      createdAt: new Date().toISOString(),
+    });
+    const message = await storage.createContactMessage(messageData);
+    res.json(message);
+  });
+
+  // Get all contact messages (could be used for admin panel later)
+  app.get("/api/contact/messages", async (_req, res) => {
+    const messages = await storage.getContactMessages();
+    res.json(messages);
   });
 
   const httpServer = createServer(app);
