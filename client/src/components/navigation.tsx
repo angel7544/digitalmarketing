@@ -7,8 +7,11 @@ export default function Navigation() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/learning", label: "Learning" },
+    { href: "/articles", label: "Articles" },
     { href: "/seo-toolkit", label: "SEO Toolkit" },
     { href: "/crm-insights", label: "CRM Insights" },
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (

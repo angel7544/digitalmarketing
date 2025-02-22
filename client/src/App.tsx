@@ -8,6 +8,10 @@ import Home from "@/pages/home";
 import Learning from "@/pages/learning";
 import SeoToolkit from "@/pages/seo-toolkit";
 import CrmInsights from "@/pages/crm-insights";
+import AboutUs from "@/pages/about";
+import Contact from "@/pages/contact";
+import Articles from "@/pages/articles";
+import ChatBot from "@/components/chat-bot";
 
 function Router() {
   return (
@@ -19,6 +23,9 @@ function Router() {
           <Route path="/learning" component={Learning} />
           <Route path="/seo-toolkit" component={SeoToolkit} />
           <Route path="/crm-insights" component={CrmInsights} />
+          <Route path="/articles" component={Articles} />
+          <Route path="/about" component={AboutUs} />
+          <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>
@@ -30,6 +37,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router />
+      <ChatBot />
       <Toaster />
     </QueryClientProvider>
   );
