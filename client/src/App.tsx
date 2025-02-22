@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Navigation from "@/components/navigation";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
-import Learning from "@/pages/learning";
 import SeoToolkit from "@/pages/seo-toolkit";
 import CrmInsights from "@/pages/crm-insights";
 import AboutUs from "@/pages/about";
@@ -20,7 +19,6 @@ function Router() {
       <main className="container mx-auto px-4 py-8">
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/learning" component={Learning} />
           <Route path="/seo-toolkit" component={SeoToolkit} />
           <Route path="/crm-insights" component={CrmInsights} />
           <Route path="/articles" component={Articles} />
