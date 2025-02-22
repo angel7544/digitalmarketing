@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertUserSchema, insertTipSchema, insertContactSchema } from "@shared/schema";
+import { sendContactEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/modules", async (req, res) => {
@@ -33,17 +34,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json(user);
   });
 
-  // Contact form submission endpoint
+  // Contact form submission endpoint with email notification
   app.post("/api/contact", async (req, res) => {
-    const messageData = insertContactSchema.parse({
-      ...req.body,
-      createdAt: new Date().toISOString(),
-    });
-    const message = await storage.createContactMessage(messageData);
-    res.json(message);
+    try {
+      const messageData = insertContactSchema.parse({
+        ...req.body,
+        createdAt: new Date().toISOString(),
+      });
+
+      // Store in database
+      const message = await storage.createContactMessage(messageData);
+
+      // Send email notification
+      await sendContactEmail(
+        messageData.name,
+        messageData.email,
+        messageData.message
+      );
+
+      res.json(message);
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      res.status(500).json({ message: 'Failed to process contact form submission' });
+    }
   });
 
-  // Get all contact messages (could be used for admin panel later)
+  // Get all contact messages
   app.get("/api/contact/messages", async (_req, res) => {
     const messages = await storage.getContactMessages();
     res.json(messages);
