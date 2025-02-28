@@ -1,23 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { FaLinkedin, FaGithub } from "react-icons/fa"; // Using react-icons for the icons
 
 const teamMembers = [
   {
-    name: "Alex Thompson",
-    role: "AI & Marketing Specialist",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-    bio: "Expert in AI-driven marketing strategies with 8+ years of experience.",
+    name: "Angel",
+    role: "SEO & AI Specialist",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFinZ5z30I1nQ/profile-displayphoto-shrink_400_400/B4DZTRVNVDGkAk-/0/1738678785903?e=1746057600&v=beta&t=ISzcQ9W37Srd_JGoYGJkc5fkNlljPHQ-FmLl7JmK0Yk",
+    bio: "Expert in AI-driven marketing strategies with 3+ years of experience.",
+    linkedin: "https://www.linkedin.com/in/angel3002",
+    github: "https://github.com/angel7544",
   },
   {
-    name: "Sarah Chen",
-    role: "SEO Expert",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    name: "Ashutosh Kumar",
+    role: "Full Stack Developer",
+    image: "https://devashu.tech/static/media/Ashutosh.206017ddeed8a1d05736.jpg",
     bio: "Passionate about optimizing digital presence and improving search rankings.",
+    linkedin: "https://www.linkedin.com/in/ashutosh-kumar-7ba1a6211/",
+    github: "https://github.com/Ashukr321/",
   },
   {
-    name: "Michael Rodriguez",
-    role: "CRM Strategist",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    name: "Himanshu Kumar",
+    role: "CRM Strategist & SEO Expert",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQHUJDszeLlG0w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723631826386?e=1746057600&v=beta&t=7owSrgKW0UJ7sDeunUFju3V2BZSq2ounbuiygwlGFi4",
     bio: "Specialized in developing customer relationship strategies and automation.",
+    linkedin: "https://www.linkedin.com/in/himanshu-kumar-b6b96b248/",
+    github: "https://github.com/",
   },
 ];
 
@@ -44,7 +51,29 @@ export default function AboutUs() {
                 />
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-primary mb-2">{member.role}</p>
-                <p className="text-muted-foreground text-sm">{member.bio}</p>
+                <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
+                
+                {/* Social Links */}
+                <div className="flex justify-center space-x-4">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary/80 transition"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    <FaLinkedin size={24} />
+                  </a>
+                  <a
+                    href={member.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary/80 transition"
+                    aria-label={`${member.name}'s GitHub`}
+                  >
+                    <FaGithub size={24} />
+                  </a>
+                </div>
               </div>
             </CardContent>
           </Card>
