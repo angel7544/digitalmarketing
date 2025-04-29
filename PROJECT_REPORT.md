@@ -1,13 +1,13 @@
 <div style="text-align: center; page-break-after: always;">
 
 <h1 style="font-size: 28px; margin-bottom: 30px; color: #2563eb;">Project Report</h1>
-<h2 style="font-size: 18px; color: #666;">(For Project Website Submission)</h2>
+<h2 style="font-size: 18px; color: #666;">AIIT, Amity University Patna</h2>
 
 <div style="margin: 40px 0;">
 <p style="margin: 10px 0;"><strong>Title of the Project:</strong> Digital Marketing AI Assistant</p>
-<p style="margin: 10px 0;"><strong>Submitted by:</strong> Marketing Mentor Team</p>
-<p style="margin: 10px 0;"><strong>Submitted to:</strong> Project Evaluation Committee</p>
-<p style="margin: 10px 0;"><strong>Submission Date:</strong> 2024</p>
+<p style="margin: 10px 0;"><strong>Submitted by:</strong>Himanshu Kr. (010), Angel (012), Ashutosh Kr. (013)</p>
+<p style="margin: 10px 0;"><strong>Submitted to:</strong>Asst. Prof. Ravi Ranjan</p>
+<p style="margin: 10px 0;"><strong>Submission Date:</strong> 2025</p>
 </div>
 
 <div style="border-top: 2px solid #2563eb; width: 50%; margin: 30px auto;"></div>
@@ -67,7 +67,7 @@ The platform serves as an all-in-one solution that combines educational resource
 - **Animations:** Framer Motion for smooth, professional animations
 - **Real-time Features:** WebSocket Client for live updates
 
-#### Example Frontend Component Implementation
+#### Frontend Component Implementation
 ```typescript
 // src/components/AIAssistant/ChatInterface.tsx
 import { useState } from 'react'
@@ -149,7 +149,7 @@ export const ChatInterface = () => {
 - **AI Processing:** TensorFlow.js
 - **Real-time Communication:** WebSocket Server
 
-#### Example Backend Implementation
+#### Backend Implementation
 ```typescript
 // server/routes.ts
 import express from 'express'
@@ -187,7 +187,7 @@ router.post('/api/ai/chat', async (req, res) => {
 export default router
 ```
 
-#### Database Schema Example
+#### Database Schema 
 ```typescript
 // shared/schema.ts
 import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core'
@@ -438,7 +438,7 @@ export const userProgress = pgTable('user_progress', {
 </div>
 </div>
 
-### Security Implementation Example
+### Security Implementation 
 
 ```typescript
 // server/auth.ts
