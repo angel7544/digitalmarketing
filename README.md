@@ -1,6 +1,6 @@
 # Digital Marketing AI Assistant
 
-A comprehensive digital marketing platform powered by AI to help businesses optimize their marketing strategies, manage customer relationships, and enhance their learning experience.
+A comprehensive digital marketing platform powered by AI to help businesses optimize their marketing strategies, manage customer relationships, and enhance their learning experience through intelligent analysis and real-time insights.
 
 ## 🚀 Features
 
@@ -9,20 +9,25 @@ A comprehensive digital marketing platform powered by AI to help businesses opti
   - Progress tracking
   - Category-based module organization
 
-- **AI-Powered Chat Assistant**
+- **AI-Powered Analysis & Chat Assistant**
   - Real-time marketing advice
   - Personalized recommendations
   - Interactive learning support
+  - TensorFlow.js powered predictions
+  - Data-driven marketing insights
 
 - **CRM Integration**
   - Customer relationship management
   - Data-driven insights
   - Contact management system
+  - Real-time data synchronization
+  - WebSocket-based updates
 
 - **SEO Toolkit**
   - Search engine optimization tools
   - Performance analytics
   - Marketing insights
+  - AI-generated recommendations
 
 ## 🛠️ Tech Stack
 
@@ -34,6 +39,7 @@ A comprehensive digital marketing platform powered by AI to help businesses opti
 - Wouter (Routing)
 - Tanstack Query (Data Fetching)
 - Framer Motion (Animations)
+- WebSocket Client for real-time updates
 
 ### Backend
 - Node.js
@@ -42,12 +48,33 @@ A comprehensive digital marketing platform powered by AI to help businesses opti
 - Drizzle ORM
 - SendGrid (Email Services)
 - TensorFlow.js (AI Features)
+- WebSocket Server for live updates
 
 ### Development Tools
 - Vite
 - ESBuild
 - TypeScript
 - Drizzle Kit (Database Migrations)
+
+## 🔄 System Architecture
+
+### Data Flow
+- Client-Server communication via HTTP/WS
+- Real-time updates through WebSocket
+- AI processing with TensorFlow.js
+- Secure data storage in PostgreSQL
+
+### Authentication Flow
+- Secure user authentication
+- Session token management
+- Database-backed user verification
+
+### Marketing Analysis Pipeline
+1. User input collection
+2. Data processing
+3. AI analysis
+4. Recommendation generation
+5. Results presentation
 
 ## 🏗️ Project Structure
 
